@@ -45,20 +45,23 @@ class _StudentAddState extends State{
 
   Widget buildFirstNameField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Öğrenci adı", hintText: "mustafa"),
+      //bu başlangıç değeri
+    initialValue: selectedStudent.firstName,
+    decoration: InputDecoration(labelText: "Öğrenci adı", hintText: "mustafa"),
       onSaved: (String? value){selectedStudent.firstName = value;},
     );
   }
   Widget buildLastNameField() {
     return TextFormField(
+      initialValue: selectedStudent.lastName,
       decoration: InputDecoration(labelText: "Öğrenci soyadı", hintText: "Baskonus"),
       onSaved: (String? value){selectedStudent.lastName = value;},
     );
   }
   Widget buildGradeField() {
     return TextFormField(
+      initialValue: selectedStudent.grade.toString(),
       decoration: InputDecoration(labelText: "Aldığı Not", hintText: "65"),
-
       onSaved: (String? value){selectedStudent.grade = int.parse(value!);},
     );
   }
